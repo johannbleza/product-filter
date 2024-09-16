@@ -63,7 +63,9 @@ displayProducts(data.filter((item) => item.name.includes("")));
 // SEARCH INPUT
 search.addEventListener("keyup", (e) =>
   displayProducts(
-    data.filter((item) => item.name.toLowerCase().includes(e.target.value))
+    data.filter((item) =>
+      item.name.toLowerCase().includes(e.target.value.toLowerCase())
+    )
   )
 );
 
