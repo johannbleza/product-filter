@@ -44,8 +44,9 @@ const priceRange = document.querySelector(".priceRange");
 const priceText = document.querySelector(".price-text");
 
 function displayProducts(filteredProducts) {
-  products.innerHTML = filteredProducts.map(
-    (product) => `<div class="product">
+  products.innerHTML = filteredProducts
+    .map(
+      (product) => `<div class="product">
         <img
         src="${product.img}"
         alt=""
@@ -54,7 +55,8 @@ function displayProducts(filteredProducts) {
         <p class="price">PHP ${product.price}.00</p>
         <p class="category">${product.category}</p>
         </div>`
-  );
+    )
+    .join("");
 }
 
 // SHOW ALL PRODUCTS  FIRST
@@ -75,7 +77,6 @@ data.forEach((product) => {
     const category = document.createElement("li");
     category.classList.add("categoryList");
     category.innerHTML = product.category;
-    console.log(category.innerHTML.includes("T-shirt"));
     categories.appendChild(category);
 
     category.addEventListener("click", () => {
